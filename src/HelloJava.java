@@ -9,13 +9,17 @@ public class HelloJava extends HttpServlet {
 
     private String message=null;
 
+    public void init() throws ServletException{
+        message="23333233 xx";
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        message="Hello Java, this message is from servlet! 233333";
+        message="Hello Java, this message is from servlet! xxx";
         //message="xxoo";
         response.setContentType("text/html");
 
