@@ -9,10 +9,10 @@
     </servlet>
 
     <!-- 如下配置路径执行对应servlet，或者在对应得java class前加@WebServlet("/HelloJava") -->
-    <!--<servlet-mapping>
+    <servlet-mapping>
         <servlet-name>HelloJava</servlet-name>
         <url-pattern>/HelloJava</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
 
 
 </web-app>
