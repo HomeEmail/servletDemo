@@ -12,9 +12,24 @@
 
 3.项目拉取下来时，需要设置项目结构 指定sources，使ide识别java文件
 
-4.生成jar包 打开项目配置 配置Artifacts 注意配置output layout时设置output root包含编译的class文件目录 （一般右边input去左边就好）(大概有如下目录结构：WEB-INF/classes)
+4.生成jar包 打开项目配置 配置Artifacts type选择JAR
 
-5.配置tomcat：modules dependencies
+4.1 配置开发编译，配置Artifacts; type选择Web Application: Exploded 注意配置output layout时设置output root包含编译的class文件目录 （一般右边input去左边就好）(大概有如下目录结构：WEB-INF/classes)
+
+5.添加tomcat：modules dependencies
+
+6.生成war包，配置Artifacts; type选择Web Application: Archive 注意配置output layout时设置output root包含编译的class文件目录
+
+部署到线上：把生成的war包放到tomcat的webapps目录下，启动tomcat时会自动解压
+
+
+
+
+
+
+
+
+
 
 
 javaBean和Servlet的区别
