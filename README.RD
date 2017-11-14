@@ -17,7 +17,22 @@
 5.配置tomcat：modules dependencies
 
 
+javaBean和Servlet的区别
 
+http://blog.csdn.net/xiaoyu714543065/article/details/8735139
+
+servlet和JSP和javabean的区别
+
+https://zhidao.baidu.com/question/32393912.html
+
+总结：
+  (1)javabean只含有属性、set、get方法。
+  (2)servlet 用于处理数据、逻辑
+  (3)javabean 说笼统点是表现，显示数据
+  (4)javabean、servlet、jsp分别对应M（odel）、C（ontroller）、V（iew）
+举例： servlet查询数据库-----javabean保存查询结果-----jsp显示查询结果
+javabean就是一个普通的Java类，里面为属性增加了getter和setter并提供默认构造。可以在多层架构的各层存在。想用它作什么都行。
+而Servlet是展示层的东西……应当只在展示层存在。常作为MVC中的控制器。
 
 
 

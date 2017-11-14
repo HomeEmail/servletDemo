@@ -4,7 +4,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
-//@WebServlet("/HelloJava")
+//访问路径示例：http://localhost:8081/servletDemo/HelloJava
+//@WebServlet("/HelloJava") //或者在web.xml里配置<servlet-mapping>
 public class HelloJava extends HttpServlet {
 
     private String message=null;
