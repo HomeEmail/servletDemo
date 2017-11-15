@@ -12,8 +12,10 @@ public class MySqlDemo {
     //数据库的用户名和密码
     static final String USER = "root";
     static final String PASS = "123456";
-    
     public static void main(String[] args){
+       exec(args);
+    }
+    public static void exec(String[] args){
         Connection conn = null;
         Statement stmt = null;
         try{
