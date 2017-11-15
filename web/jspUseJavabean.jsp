@@ -28,6 +28,8 @@
     simple.setName("ivan");
     simple.setAge(23);
 
+    HttpSession session1 =(HttpSession)request.getSession();
+
 %>
 <!--
 访问参考：
@@ -44,6 +46,7 @@ http://localhost:8081/servletDemo/jspUseJavabean.jsp
     <h1>如何使用jsp调用javabean</h1>
     <h3>姓名:<%=simple.getName()%></h3>
     <h3>年龄:<%=simple.getAge()%></h3>
+    <p>session id: <%= session1.getId() %></p>
 
 </body>
 </html>

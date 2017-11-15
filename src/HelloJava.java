@@ -31,6 +31,8 @@ public class HelloJava extends HttpServlet {
 
         //message="xxoo";
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+
 
         // PrintWriter out=response.getWriter();
         // out.println("<h1>"+message+"</h1>");
