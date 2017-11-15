@@ -1,4 +1,4 @@
-package package1;
+package bean;
 
 public class SimpleBean {
     private String name;

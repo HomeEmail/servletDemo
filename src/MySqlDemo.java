@@ -13,9 +13,9 @@ public class MySqlDemo {
     static final String USER = "root";
     static final String PASS = "123456";
     public static void main(String[] args){
-       exec(args);
+        ResultSet rs=exec(args);
     }
-    public static void exec(String[] args){
+    public static ResultSet exec(String[] args){
         Connection conn = null;
         Statement stmt = null;
         try{
@@ -51,7 +51,7 @@ public class MySqlDemo {
             rs.close();
             stmt.close();
             conn.close();
-            
+            return  rs;
         }catch (SQLException se){
             //处理jdbc错误
             se.printStackTrace();
@@ -69,7 +69,9 @@ public class MySqlDemo {
             }catch (SQLException se3){
                 se3.printStackTrace();
             }
+
         }
         System.out.println("Goodbye!");
+        return null;
     }
 }

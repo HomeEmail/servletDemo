@@ -12,7 +12,7 @@
 
 3.项目拉取下来时，需要设置项目结构 指定sources，使ide识别java文件
 
-4.生成jar包 打开项目配置 配置Artifacts type选择JAR
+4.生成jar包 打开项目配置 配置Artifacts type选择JAR （配置使用已存在的META-INF/MANIFEST.MF）
 
 4.1 配置开发编译，配置Artifacts; type选择Web Application: Exploded 注意配置output layout时设置output root包含编译的class文件目录 （一般右边input去左边就好）(大概有如下目录结构：WEB-INF/classes)
 

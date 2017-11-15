@@ -1,3 +1,5 @@
+package servlet;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -25,13 +27,16 @@ public class HelloJava extends HttpServlet {
         message="Hello Java, this message is from servlet! 66666";
 
         //实例化项目中的其他类,这类是简单操作数据库（不是这样用的。）
-       /* MySqlDemo mysqlDemo=new MySqlDemo();
+        /*MySqlDemo mysqlDemo=new MySqlDemo();
         String[] args=null;
         mysqlDemo.main(args);*/
 
         //message="xxoo";
         response.setContentType("text/html");
-        response.setCharacterEncoding("UTF-8");
+        //response.setCharacterEncoding("UTF-8");
+
+        System.out.println("request.getServletPath():"+request.getServletPath());
+        System.out.println("request.getServletContext().getRealPath:"+request.getServletContext().getRealPath("/WEB-INF/web.xml"));
 
 
         // PrintWriter out=response.getWriter();

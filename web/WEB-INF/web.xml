@@ -5,7 +5,7 @@
          version="3.1">
     <servlet>
         <servlet-name>HelloJava</servlet-name>
-        <servlet-class>HelloJava</servlet-class>
+        <servlet-class>servlet.HelloJava</servlet-class>
     </servlet>
 
     <!-- 如下配置路径执行对应servlet，或者在对应得java class前加@WebServlet("/HelloJava") -->
@@ -13,6 +13,42 @@
         <servlet-name>HelloJava</servlet-name>
         <url-pattern>/HelloJava</url-pattern>
     </servlet-mapping>
+
+
+    <!-- 下面是Filter的配置 -->
+    <filter>
+        <filter-name>myFilter</filter-name>
+        <filter-class>filter.MyFilter</filter-class>
+        <init-param>
+            <param-name>paramName</param-name>
+            <param-value>paramValue</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>myFilter</filter-name><!-- 匹配到下面这些路径的都会执行myFilter这个过滤器 -->
+        <url-pattern>*.jsp</url-pattern>
+        <url-pattern>/jsp/*</url-pattern>
+        <url-pattern>/HelloJava/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>characterEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>enabled</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 
 </web-app>

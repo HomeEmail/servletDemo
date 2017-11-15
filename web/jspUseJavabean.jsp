@@ -15,11 +15,11 @@
     (2)scope：表示此对象保存的范围，一共有四种属性范围：page、request、session、application
     (3)class：对象所对应的包.类名称
 -->
-<jsp:useBean id="simple" scope="page" class="package1.SimpleBean" />
+<jsp:useBean id="simple" scope="page" class="bean.SimpleBean" />
 
 
 <!-- import方式导入javabean -->
-<%--@ page import="package1.*" --%>
+<%--@ page import="bean.*" --%>
 
 <%
     //SimpleBean simple = new SimpleBean(); //import方式导入javabean 后初始化实例
