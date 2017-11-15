@@ -9,8 +9,13 @@
 <html>
   <head>
     <title>servletDemo</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
   </head>
   <body>
-  Hello World!
+    <h1>Hello World!</h1>
+
   </body>
+  <script src="js/index.js"></script>
 </html>

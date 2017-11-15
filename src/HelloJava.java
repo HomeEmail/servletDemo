@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
@@ -31,8 +32,13 @@ public class HelloJava extends HttpServlet {
         //message="xxoo";
         response.setContentType("text/html");
 
-        PrintWriter out=response.getWriter();
-        out.println("<h1>"+message+"</h1>");
+        // PrintWriter out=response.getWriter();
+        // out.println("<h1>"+message+"</h1>");
+
+        //使用这种方式跳转到另外一个内容来输出，这跳转是服务端的跳转，，浏览器地址栏不会变
+        request.setAttribute("msg","form HelloJava servlet");//保存需要携带的信息
+        RequestDispatcher dispatch = request.getRequestDispatcher("/HelloJava.jsp");
+        dispatch.forward(request,response);
 
     }
 }
