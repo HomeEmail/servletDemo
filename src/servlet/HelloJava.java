@@ -3,10 +3,15 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 import java.sql.*;
+import java.util.ArrayList;
+
+import bean.ConfigReadTest;
+import bean.MySqlDemo;
 
 //访问路径示例：http://localhost:8081/servletDemo/HelloJava
 //@WebServlet("/HelloJava") //或者在web.xml里配置<servlet-mapping>
@@ -26,10 +31,19 @@ public class HelloJava extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         message="Hello Java, this message is from servlet! 66666";
 
+        ServletContext sc=getServletContext();
+
+        String realPath = sc.getRealPath("/WEB-INF/dbConfig.properties");//返回路径就是网站发布的根路径加上传进去的路径字符串,使用这个会自动识别兼容不同系统的路径分隔符
+        System.out.println("getServletContext.getRealPath: "+realPath);
+
+        //ConfigReadTest.readFile(realPath);
+
         //实例化项目中的其他类,这类是简单操作数据库（不是这样用的。）
-        /*MySqlDemo mysqlDemo=new MySqlDemo();
+        MySqlDemo mysqlDemo=new MySqlDemo(sc);
         String[] args=null;
-        mysqlDemo.main(args);*/
+        ArrayList array=mysqlDemo.exec(args);
+
+        request.setAttribute("userList",array);
 
         //message="xxoo";
         response.setContentType("text/html");

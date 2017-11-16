@@ -10,6 +10,7 @@
 <jsp:directive.page import="java.lang.*" />
 
 
+
 <%
     String msg=(String)request.getAttribute("msg");
     HttpSession session1 =(HttpSession)request.getSession();
@@ -23,5 +24,17 @@
     <h1>从HelloJava servlet 跳转过来的</h1>
     <h3><%= msg %></h3>
     <p>session id: <%= session1.getId() %></p>
+    <%
+        ArrayList array=(ArrayList)request.getAttribute("userList");
+        for(Object ob : array){
+            HashMap map=(HashMap) ob;
+    %>
+    <div>
+        <span>username:<%=map.get("username")%>
+        </span><span>id:<%=map.get("id")%></span>
+    </div>
+    <%
+        }
+    %>
 </body>
 </html>
