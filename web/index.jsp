@@ -23,7 +23,12 @@
   <body>
     <h1>Hello World!</h1>
     <p>session id: <%= session1.getId() %></p>
-
+    <div>
+      <a href="./HelloJava">go HelloJava</a>
+    </div>
+    <div>
+      <a href="./jspUseJavabean.jsp">go jspUseJavabean</a>
+    </div>
   </body>
   <script src="js/index.js"></script>
 </html>
